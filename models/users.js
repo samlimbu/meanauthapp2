@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-const config = require('../config/database');
+var mongoose = require('mongoose');
+var bcrypt = require('bcryptjs');
+var config = require('../config/database');
 
 //connect to database
 mongoose.connect(config.database);
@@ -9,7 +9,7 @@ mongoose.connection.on('connected',()=>{
      console.log('Connected to databse ' + config.database);
 })
 //Use schema
-const UserSchema = mongoose.Schema({
+var UserSchema = mongoose.Schema({
      name:{
           type: String
      },
@@ -27,7 +27,7 @@ const UserSchema = mongoose.Schema({
      }
 
 });
-const User = module.exports = mongoose.model('User', UserSchema);
+var User = module.exports = mongoose.model('User', UserSchema);
 
 
 module.exports.getUsers =function (callback){
@@ -37,7 +37,7 @@ module.exports.getUserById =function (id, callback){
      User.findById(id, callback);
 }
 module.exports.getUserByUsername=function(username, callback){
-     const query = {username:username}
+     var query = {username:username}
      User.findOne(query, callback);
 }
 module.exports.addUser = function(newUser, callback){
