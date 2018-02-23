@@ -1,0 +1,15 @@
+a{
+     font-size: 150%;
+}
+.container{
+     display: inline-block;
+}
+.navbar ul{
+     display: inline-block;
+     border: 1px solid black;
+}
+
+.navbar ul li a{
+  
+     border: 1px solid black;
+}

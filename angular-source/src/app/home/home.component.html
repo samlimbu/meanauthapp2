@@ -1,0 +1,30 @@
+<div class="jumbotron text-center">
+  <h1>Mean authen app</h1>
+  <p class="lead">welcom to our mean autn build from scratech</p>
+  <div>
+    <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
+    <a class="btn btn-secondary" [routerLink]="['/login']">Login</a>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Express Backend</h3>
+      <p>a rock solid node js express serve usin to mongoose to organize models</p>
+
+    </div>
+    <div class="col-md-4">
+        <h3>Angular CLI</h3>
+        <p>To generate compoenents service and more</p>
+        
+      </div>
+      <div class="col-md-4">
+          <h3>JWT Tokens</h3>
+          <p>Full featured athentication using JSON web tokens. login and store user data</p>
+          
+        </div>
+  </div>
+</div>
+<div *ngIf = "DATA">
+    <ul>
+        <li *ngFor="let item of DATA">{{item.name}}</li>
+    </ul>
+</div>
