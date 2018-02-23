@@ -63,11 +63,10 @@ app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname,'public/index.html'));
 })
 
-/*
+
 const ip = process.env.OPENSHIFT_NODEJS_IP || '12.0.0.01';
 const port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
-*/
-const port = 3000;
+
 app.listen(port, ()=>{
      console.log('server started on port' + port);
 });
