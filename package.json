@@ -8,10 +8,10 @@
     "start": "node app"
   },
   "dependencies": {
-    
     "bcryptjs": "*",
     "body-parser": "*",
     "cors": "*",
+    "dep1": "^1.0.0",
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
