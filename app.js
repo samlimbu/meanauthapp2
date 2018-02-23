@@ -64,9 +64,8 @@ app.get('*', (req, res)=>{
 })
 
 
-const ip = process.env.OPENSHIFT_NODEJS_IP || '12.0.0.01';
-const port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+const ip = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP ||'localhost';
+const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
-app.listen(port, ()=>{
-     console.log('server started on port' + port);
-});
+app.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
