@@ -1,14 +1,14 @@
-const express= require('express');
-const router = express.Router();
-const passport = require('passport');
-const jwt=require('jsonwebtoken');
-const config = require('../config/database');
-const User = require('../models/users');
+var express= require('express');
+var router = express.Router();
+var passport = require('passport');
+var jwt=require('jsonwebtoken');
+var config = require('../config/database');
+var User = require('../models/users');
 //Register'
 
 
 router.post('/register',(req,res,next)=>{
-     let newUser = new User({
+     var newUser = new User({
           name: req.body.name,
           email: req.body.email,
           username:req.body.username,
@@ -27,8 +27,8 @@ router.post('/register',(req,res,next)=>{
 });
 //Authenticate
 router.post('/authenticate',(req,res,next)=>{
-     const username = req.body.username;
-     const password = req.body.password;
+     var username = req.body.username;
+     var password = req.body.password;
      
      User.getUserByUsername(username, (err,user)=>{
           if(err)
@@ -39,7 +39,7 @@ router.post('/authenticate',(req,res,next)=>{
           User.comparePassword(password, user.password, (err, isMatch)=>{
                if(err) throw err;
                if(isMatch){
-                    const token = jwt.sign({data: user}, config.secret, {
+                    var token = jwt.sign({data: user}, config.secret, {
                          expiresIn: 604800 //1week in secs
                     });
                     res.json({
