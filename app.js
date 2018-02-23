@@ -59,7 +59,10 @@ app.get('/test', function(req,res,next){
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname,'public/index.html'));
 })
-const port = 3000;
-app.listen(port, ()=>{
+
+
+const ip = process.env.OPENSHIFT_NODEJS_IP || '12.0.0.01';
+const port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+app.listen(port, ip, ()=>{
      console.log('server started on port' + port);
 });
