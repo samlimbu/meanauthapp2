@@ -16,7 +16,8 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "mongodb": "*"
   },
   "author": "sam limbu",
   "license": "ISC"
