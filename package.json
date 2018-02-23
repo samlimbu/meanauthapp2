@@ -2,15 +2,12 @@
   "name": "meanauthapp",
   "version": "1.0.0",
   "description": "mean stack authentication app",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
   },
-  "engine": {
-    "node": "*",
-    "npm": "*"
-  },
+  
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
@@ -22,6 +19,14 @@
     "passport": "*",
     "passport-jwt": "*",
     "mongodb": "*"
+  },
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samlimbu/meanauthapp2.git"
   },
   "author": "sam limbu",
   "license": "ISC"
